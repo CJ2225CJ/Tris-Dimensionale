@@ -1,80 +1,45 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class TrisPositioningAndLogic : MonoBehaviour
 {
-    private GameObject F1P1;
-    private GameObject F1P2;
-    private GameObject F1P3;
-    private GameObject F1P4;
-    private GameObject F1P5;
-    private GameObject F1P6;
-    private GameObject F1P7;
-    private GameObject F1P8;
-    private GameObject F1P9;
-
-    private GameObject F2P1;
-    private GameObject F2P2;
-    private GameObject F2P3;
-    private GameObject F2P4;
-    private GameObject F2P5;
-    private GameObject F2P6;
-    private GameObject F2P7;
-    private GameObject F2P8;
-    private GameObject F2P9;
-
-    private GameObject F3P1;
-    private GameObject F3P2;
-    private GameObject F3P3;
-    private GameObject F3P4;
-    private GameObject F3P5;
-    private GameObject F3P6;
-    private GameObject F3P7;
-    private GameObject F3P8;
-    private GameObject F3P9;
-    //public Transform F1P1;
-
-    [SerializeField] private int currentFlore = 1;
+    
     [SerializeField] public GameObject[] selectedSimbol;
-    [SerializeField] private GameObject xSimbol;
-    [SerializeField] private GameObject oSimbol;
-    public int cellCurrentSimbolStat = 2; // 0 = X 1 = O 2 = empty
-    public GameObject[] F1trisSpaces; // try diferent forms to make this wark
+    public GameObject[] F1trisSpaces; // obsolete
     public GameObject[] F2trisSpaces;
     public GameObject[] F3trisSpaces; 
+
+    [SerializeField] private int currentFlore = 1;
+    public int currentCellSimbol = 2; // 0 = X 1 = O 2 = empty
     public int currentSimbolTurn = 0; // 0 = x 1 = o
+    [SerializeField] private GameObject xSimbol;
+    [SerializeField] private GameObject oSimbol;
+    public GameObject[] trisSpaces;
+    public int turnCounter;
+    public GameObject[] turnIndicatorSprite;
+    public int[] spacesIdentifier;
+    public GameObject[] simbols;
 
-    private void GameSetup()
-    {
-        currentSimbolTurn = 0;
-        //for (int i = 0; i < F1trisSpaces.Length; i++)
-        //{
-        //    F1trisSpaces[i].SetActive(true);
-        //    F1trisSpaces[i].GetComponent<GameObject>().gameObject.name = null;
-
-        //}
-        //currentSimbolTurn = 0;
-        //for (int i = 0; i < F1trisSpaces.Length; i++)
-        //{
-        //    F2trisSpaces[i].SetActive(true);
-        //    F2trisSpaces[i].GetComponent<GameObject>().gameObject.name = null;
-
-        //}
-        //currentSimbolTurn = 0;
-        //for (int i = 0; i < F1trisSpaces.Length; i++)
-        //{
-        //    F3trisSpaces[i].SetActive(true);
-        //    F3trisSpaces[i].GetComponent<GameObject>().gameObject.name = null;
-
-        //}
-    }
-
-    // Start is called before the first frame update
     void Start()
     {
         GameSetup();
     }
+
+    private void GameSetup()
+    {
+        currentSimbolTurn = 0;
+        turnCounter = 0;
+        for (int i = 0; i < spacesIdentifier.Length; i++)
+        {
+            spacesIdentifier[i] = -100;
+        }
+    }
+
+    public void TrisButtons(int number)
+    {
+        trisSpaces[number].GetComponent(Cels) SetActive(true);
+    }
+
+    // Old stuff
 
     // Update is called once per frame
     void Update()
