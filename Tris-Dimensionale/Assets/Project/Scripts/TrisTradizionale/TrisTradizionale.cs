@@ -47,7 +47,7 @@ public class TrisTradizionale : MonoBehaviour
             spacesIdentifier[i] = -100;
         }
     }
-    void NextGameSetup() // optimize 
+    void NextGameSetup() 
     {
         for (int i = 0; i < trisSpaces.Length; i++)
         {
@@ -128,10 +128,9 @@ public class TrisTradizionale : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             int WH = spacesIdentifier[0 + (i * 3)] + spacesIdentifier[1 + (i * 3)] + spacesIdentifier[2 + (i * 3)];// W means win H means horizontal
-            var winCondition = new int[] { WH };
-            for (int y = 0; y < winCondition.Length; y++)
+            for (int y = 0; y < WH; y++)
             {
-                if (winCondition[y] == 3 * (currentSimbolTurn + 1))
+                if (WH== 3 * (currentSimbolTurn + 1))
                 {
                     WinDisplay(i);
                     return;
@@ -146,10 +145,9 @@ public class TrisTradizionale : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             int WV = spacesIdentifier[0 + i] + spacesIdentifier[3 + i] + spacesIdentifier[6 + i];// V means vertical
-            var winCondition = new int[] { WV };// this is the problem
-            for (int y = 0; y < winCondition.Length; y++)
+            for (int y = 0; y < WV; y++)
             {
-                if (winCondition[y] == 3 * (currentSimbolTurn + 1))
+                if (WV == 3 * (currentSimbolTurn + 1))
                 {
                     WinDisplay(i + 3);
                     return;
@@ -163,11 +161,10 @@ public class TrisTradizionale : MonoBehaviour
 
         for (int i = 0; i < 2; i++)
         {
-            int WP = spacesIdentifier[0 + i + i] + spacesIdentifier[4] + spacesIdentifier[8 - i - i];// P means perpendicular
-            var winCondition = new int[] { WP };
-            for (int y = 0; y < winCondition.Length; y++)
+            int WD = spacesIdentifier[0 + i + i] + spacesIdentifier[4] + spacesIdentifier[8 - i - i];// D means diagonal
+            for (int y = 0; y < WD; y++)
             {
-                if (winCondition[y] == 3 * (currentSimbolTurn + 1))
+                if (WD == 3 * (currentSimbolTurn + 1))
                 {
                     WinDisplay(i + 6);
                     return;
