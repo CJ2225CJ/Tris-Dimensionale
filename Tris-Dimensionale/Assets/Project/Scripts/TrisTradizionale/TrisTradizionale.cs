@@ -49,6 +49,7 @@ public class TrisTradizionale : MonoBehaviour
     }
     void NextGameSetup() 
     {
+        turnCounter = 0;
         for (int i = 0; i < trisSpaces.Length; i++)
         {
             trisSpaces[i].interactable = true;
@@ -61,7 +62,6 @@ public class TrisTradizionale : MonoBehaviour
                 trisSpaces[i].GetComponent<Image>().sprite = x.sprite;
             }   
         }
-        turnCounter = 0;
         if (firstTurnSimbol == false)
         {
             currentSimbolTurn = 1;
@@ -76,7 +76,6 @@ public class TrisTradizionale : MonoBehaviour
             turnIndicatorSprite[1].SetActive(false);
             firstTurnSimbol = false;
         }
-
         for (int i = 0; i < spacesIdentifier.Length; i++)
         {
             spacesIdentifier[i] = -100;
