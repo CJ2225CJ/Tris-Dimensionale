@@ -178,7 +178,7 @@ namespace Cinemachine
         internal bool RigsAreCreated { get => m_Rigs != null && m_Rigs.Length == 3; }
 
         /// <summary>Names of the 3 child rigs</summary>
-        public static string[] RigNames { get { return new string[] { "TopRig", "MiddleRig", "BottomRig" }; } }
+        public static string[] RigNames { get { return new string[] { "TopRig", "MiddleRig", "BottomRig" }; } } // midle ring
 
         bool mIsDestroyed = false;
 
