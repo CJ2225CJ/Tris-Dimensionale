@@ -4,6 +4,7 @@ public class WinCheckerScript : MonoBehaviour
 {
     public bool winState = false;
     private bool firstTurnSimbol = false;
+
     [SerializeField] private GameObject[] HorizontalWinLines;
     [SerializeField] private GameObject[] VerticalWinLines;
     [SerializeField] private GameObject[] HorizontalWinLinesDiagonal;

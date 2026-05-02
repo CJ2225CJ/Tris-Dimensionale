@@ -11,6 +11,7 @@ public class UITD : MonoBehaviour
     public GameObject xWinSprite;
     public GameObject oWinSprite;
     public GameObject[] turnIndicatorSprite;
+
     [SerializeField] private GameObject xSimbolPrefab;
     [SerializeField] private GameObject oSimbolPrefab;
     [SerializeField] private GameObject[] selectedSimbol;
@@ -22,11 +23,13 @@ public class UITD : MonoBehaviour
     [SerializeField] private GameObject xDrawOSprite;
     [SerializeField] private Image blank;
     [SerializeField] private TextMeshProUGUI FlorText;
+
     private float nextRoundTime = 5f;
-    private IEnumerator nextGameTimer;
-    private bool firstTurnSimbol = false;
-    private bool monoTrigget = false; // ???
+    //private IEnumerator nextGameTimer;
+    //private bool firstTurnSimbol = false;
+    //private bool monoTrigget = false; // ???
     private int nunber;
+
     [SerializeField] private Slot3D[] slot3D;
     [SerializeField] private WinCheckerScript winChecker;
     [SerializeField] private TrisPositioningAndLogic TPaL;
@@ -249,5 +252,6 @@ public class UITD : MonoBehaviour
         winChecker.NextGameSetup();
         oWinSprite.SetActive(false);
         xWinSprite.SetActive(false);
+        OnFloreChainge(slot3D);
     }
 }

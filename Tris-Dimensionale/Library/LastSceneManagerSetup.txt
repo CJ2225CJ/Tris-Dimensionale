@@ -1,13 +1,13 @@
 sceneSetups:
-- path: Assets/MainMenu.unity
+- path: Assets/Scenes/MainMenu.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0
-- path: Assets/Tris-Tradizionale.unity
+- path: Assets/Scenes/Tris-Tradizionale.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0
-- path: Assets/Scenes/SampleScene.unity
+- path: Assets/Scenes/Tris-Dimenzionale.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

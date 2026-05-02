@@ -12,6 +12,7 @@ public class MonoInputSctipt : MonoBehaviour
     }
     public void MonoInput() // remember to chaing TPaL 
     {
+        UITD.OnFloreChainge(slot3D);
         if (Input.anyKeyDown)
         {
             monoTrigget = false;
