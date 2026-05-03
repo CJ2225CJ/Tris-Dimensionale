@@ -9,10 +9,10 @@ public class CameraControl : MonoBehaviour
      private float minRadius = 3;
      private float maxRadius = 5;
      private float zoomSpeed = 2.5f;
-     private float minHigtTop = 2.5f;
+     private float minHigtTop = 2.25f;
      private float maxHigtTop = 5.5f;
-     private float minHigtBotom = -1.5f;
-     private float maxHigtBotom = -4.0f;
+     private float minHigtBotom = -5.25f;
+     private float maxHigtBotom = -2.5f;
     void Update()
     {
         CameraMover();
@@ -43,7 +43,7 @@ public class CameraControl : MonoBehaviour
             float D = FL.m_Orbits[1].m_Radius - scroll * zoomSpeed; // D means Distance
             FL.m_Orbits[0].m_Height = Mathf.Clamp(D, minHigtTop, maxHigtTop);// heigt
             FL.m_Orbits[1].m_Radius = Mathf.Clamp(D, minRadius, maxRadius);// radius
-            FL.m_Orbits[2].m_Height = Mathf.Clamp(D, minHigtBotom, maxHigtBotom);// heigt
+            FL.m_Orbits[2].m_Height = Mathf.Clamp(-D, minHigtBotom, maxHigtBotom);// heigt
         }
     }
 }
