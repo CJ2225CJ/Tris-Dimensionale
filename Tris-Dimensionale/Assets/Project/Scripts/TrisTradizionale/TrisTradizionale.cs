@@ -13,7 +13,7 @@ public class TrisTradizionale : MonoBehaviour
     public Button[] trisSpaces; // the 9 spaces of the tris 
     public bool firstTurnSimbol = false;
     public IEnumerator nextGameTimer;
-    [SerializeField] private float nextRoundTime = 5f;
+    //[SerializeField] private float nextRoundTime = 5f;
     [SerializeField] private WinDisplayer WD;
 
     void Start()
